@@ -1343,6 +1343,7 @@ hours = 12;
             time: 20000,
             errors: ['time']
           }).then(collected => {
+if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
             duration = collected.first().content * 60000;
             collected.first().delete();
             msg.edit(':eight_pointed_black_star:| **Now send The Present **').then(msg => {
