@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "$";
+const prefix = ".";
 /////////////////////////
 ////////////////////////
 
@@ -343,7 +343,7 @@ client.on('message', message => {
 });
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = [`help | $play |`,`By : KaNe `];
+    var setGame = [`.help`,`By : KaNe `];
     var i = -1;
     var j = 0;
     setInterval(function (){
