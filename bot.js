@@ -1110,7 +1110,7 @@ client.on("message", message => {
                   var name = m1.content;
                   m1.delete();
                   m.edit(message.member + ', **:timer:**').then( (m) =>{
-                      m.edit( message.member + ', **عندك كام سنة **' )
+                      m.edit( message.member + ', **اسمك باللعبه **' )
                       setTimeout(() => {
                         m.delete()
                       }, 10000);
@@ -1119,7 +1119,7 @@ client.on("message", message => {
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ', **هل ستتفاعل فى الرومات الصوتيه و الكتابية ؟ 🎙**' )
+                            m.edit( message.member + ', **عندك كام سنة 🎙**' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
@@ -1128,7 +1128,7 @@ client.on("message", message => {
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                  m.edit( message.member + ', **هل ستحترم القوانين ؟ 📑**' )
+                                  m.edit( message.member + ', **هل ستتفاعل فى الرومات الصوتيه و الكتابية ؟**' )
                                   setTimeout(() => {
                                     m.delete()
                                   }, 10000);
@@ -1137,10 +1137,18 @@ client.on("message", message => {
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                        m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ اعطنا سبباً وجيهاً **' )
+                                        m.edit( message.member + ', **هل ستحترم القوانين ؟ 📑 **' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
-                                            var ask3 = m5.content;
+                                            v m1 = m1.first();
+                  var name = m5.content;
+                  m4.delete();
+                  m.edit(message.member + ', **:timer:**').then( (m) =>{
+                      m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ اعطنا سبباً وجيهاً  **' )
+                      setTimeout(() => {
+                        m.delete()
+                      }, 10000);ar ask3 = m5.content;
+
                                             m5.delete();
                       m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
