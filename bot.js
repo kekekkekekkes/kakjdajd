@@ -1097,7 +1097,7 @@ client.on('message', message => {
 });
 
 client.on("message", message => {
-            if(message.content.startsWith("-تقديم")) {
+            if(message.content.startsWith("%تقديم")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "التقديمات")
@@ -1110,7 +1110,7 @@ client.on("message", message => {
                   var name = m1.content;
                   m1.delete();
                   m.edit(message.member + ', **:timer:**').then( (m) =>{
-                      m.edit( message.member + ', **اسمك باللعبه **' )
+                      m.edit( message.member + ', **عندك كام سنة **' )
                       setTimeout(() => {
                         m.delete()
                       }, 10000);
@@ -1119,7 +1119,7 @@ client.on("message", message => {
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ', **عندك كام سنة 🎙**' )
+                            m.edit( message.member + ', **هل ستتفاعل فى الرومات الصوتيه و الكتابية ؟ 🎙**' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
@@ -1128,7 +1128,7 @@ client.on("message", message => {
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                  m.edit( message.member + ', **هل ستتفاعل فى الرومات الصوتيه و الكتابية ؟**' )
+                                  m.edit( message.member + ', **هل ستحترم القوانين ؟ 📑**' )
                                   setTimeout(() => {
                                     m.delete()
                                   }, 10000);
@@ -1137,31 +1137,31 @@ client.on("message", message => {
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                        m.edit( message.member + ', **هل ستحترم القوانين ؟ 📑 **' )
+                                        m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ اعطنا سبباً وجيهاً **' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
-                         
-                  var name = m5.content;
-                  m4.delete();
-                  m.edit(message.member + ', **:timer:**').then( (m) =>{
-                      m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ اعطنا سبباً وجيهاً  **' )
-                      setTimeout(() => {
-                        m.delete()
-                      }, 10000);ar ask3 = m5.content;
-
+                                                var age = m5.content;
+                          m2.delete()
+                          message.channel.send( message.member + ', **:timer:**').then( (m) =>{
+                            m.edit( message.member + ', **اسمك باللعبه 🎙**' )
+                            setTimeout(() => {
+                              m.delete()
+                            }, 10000);
+                            m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m3) => {
+                                m6 = m6.first();
+                                            var ask3 = m6.content;
                                             m5.delete();
                       m.edit(message.member + ', **....جارى جمع البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**تقديم في الكلان** [__**${message.guild.name}**__]`)
+                        .setTitle(`**تقديم ادارة** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
-                        .addField('**`اسمك باللعبه`**',`${ask}`)
                         .addField('**`العمر`**', `${age}` , true)
                         .addField('**`هل سيتفاعل ؟`**',`${ask}`)
                         .addField('**`هل سيحترم القوانين ؟`**',`${ask2}`)
                         .addField('**`لماذا يجب علينا قبوله ؟`**',`${ask3}`)
-                        .addField('سوي تيكيت وانتظر الاداره ترد عليك')
+                        .addField('**`اسمك باللعبه ؟`**',`${ask3}`)
                         .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
                         channel.send(embed)
                         }, 2500);
