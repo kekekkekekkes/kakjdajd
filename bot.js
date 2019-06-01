@@ -1204,7 +1204,7 @@ client.on("message", message => {
     if(!FAMILY) return message.reply('هذه الرتبة غير موجودة');
     if(mention.roles.has(FAMILY)) return message.reply('هذا الشخص معه الرتبة مسبقا');
  
-    mention.addRole(mySupport).then(() => {
+    mention.addRole(FAMILY).then(() => {
       acRoom.send(`**[ ${FAMILY} ] واعطائك رتبة ${mention}  تم بنجاح قبولك برجاء فتح تيكيت وانتظار الادمن**`);
     });
   }
