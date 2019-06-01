@@ -1193,12 +1193,10 @@ client.on("message", message => {
     client.on('message',async message => {
   let mention = message.mentions.members.first();
   let role = message.content.split(" ").slice(2).join(" ");
-  let mySupport = message.guild.roles.find('name',role);
   if(message.content.startsWith("-قبول")) {
     let acRoom = message.guild.channels.find('name', 'القبول-الرفض');
     if(!acRoom) return message.reply("!!setac من فضلك انشاء روم **القبول-الرفض** او اكتب الامر");
     if(acRoom) {
-    if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
     if(!mention) return message.reply('منشن شخص');
       acRoom.send(`** ${mention}  تم بنجاح قبولك برجاء فتح تيكيت وانتظار الادمن**`);
     });
