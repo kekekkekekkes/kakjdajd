@@ -1100,14 +1100,14 @@ client.on('message', message => {
 });
 
 client.on("message", message => {
-            if(message.content.startsWith("-تقديم")) {
+            if(message.content.startsWith("%تقديم")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "التقديمات")
             if(!channel) return message.reply("**لانشاء روم التقديمات !!setsubmissions من فضلك اكتب الامر**")
             if(channel) {
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-              m.edit( message.member + ', **اسمك في اللعبه **' )
+              m.edit( message.member + ', **اسمك الحقيقى بالكامل **' )
               m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
                   m1 = m1.first();
                   var name = m1.content;
@@ -1149,7 +1149,7 @@ client.on("message", message => {
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**تقديم الكلان** [__**${message.guild.name}**__]`)
+                        .setTitle(`**تقديم ادارة** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
                         .addField('**`هل سيتفاعل ؟`**',`${ask}`)
@@ -1177,7 +1177,7 @@ client.on("message", message => {
 }
         });
         client.on('message', message=>{
-            if(message.content.startsWith("!!setsubmissions")) {
+            if(message.content.startsWith("-روم1")) {
             if(!message.channel.guild) return;
                 if(message.author.bot) return;
                 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("**تحتاج الى `MANAGE_CHANNELS`**");
@@ -1201,11 +1201,11 @@ client.on("message", message => {
     if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
     if(!mention) return message.reply('منشن شخص');
     if(!role) return message.reply('ادخل اسم رتبة');
-    if(!mySupport) return message.reply('هذه الرتبة غير موجودة');
-    if(mention.roles.has(mySupport)) return message.reply('هذا الشخص معه الرتبة مسبقا');
+    if(!FAMILY) return message.reply('هذه الرتبة غير موجودة');
+    if(mention.roles.has(FAMILY)) return message.reply('هذا الشخص معه الرتبة مسبقا');
  
     mention.addRole(mySupport).then(() => {
-      acRoom.send(`**[ ${mySupport} ] واعطائك رتبة ${mention} تم بنجاح قبولك**`);
+      acRoom.send(`**[ ${FAMILY} ] واعطائك رتبة ${mention}  تم بنجاح قبولك برجاء فتح تيكيت وانتظار الادمن**`);
     });
   }
 }
@@ -1237,6 +1237,8 @@ client.on('message',async message => {
             }
 			    
 })
+
+
 
 
 
