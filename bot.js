@@ -1,4 +1,4 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready',  () => {
@@ -1107,7 +1107,7 @@ client.on("message", message => {
             if(!channel) return message.reply("**لانشاء روم التقديمات !!setsubmissions من فضلك اكتب الامر**")
             if(channel) {
             message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-              m.edit( message.member + ', **اسمك باللعبه  **' )
+              m.edit( message.member + ', **اسمك في اللعبه **' )
               m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m1) => {
                   m1 = m1.first();
                   var name = m1.content;
@@ -1149,8 +1149,8 @@ client.on("message", message => {
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**تقديم ادارة** [__**${message.guild.name}**__]`)
-                        .addField('**`اسمك باللعبه`**', `${name}` , true)
+                        .setTitle(`**تقديم الكلان** [__**${message.guild.name}**__]`)
+                        .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
                         .addField('**`هل سيتفاعل ؟`**',`${ask}`)
                         .addField('**`هل سيحترم القوانين ؟`**',`${ask2}`)
