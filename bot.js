@@ -1149,7 +1149,7 @@ client.on("message", message => {
                         setTimeout(() => {
                           let embed = new Discord.RichEmbed()
                         .setColor('RANDOM')
-                        .setTitle(`**تقديم ادارة** [__**${message.guild.name}**__]`)
+                        .setTitle(`**تقديم كلان** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
                         .addField('**`هل سيتفاعل ؟`**',`${ask}`)
@@ -1200,12 +1200,7 @@ client.on("message", message => {
     if(acRoom) {
     if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
     if(!mention) return message.reply('منشن شخص');
-    if(!role) return message.reply('ادخل اسم رتبة');
-    if(!mySupport) return message.reply('هذه الرتبة غير موجودة');
-    if(mention.roles.has(mySupport)) return message.reply('هذا الشخص معه الرتبة مسبقا');
- 
-    mention.addRole(mySupport).then(() => {
-      acRoom.send(`**[ ${mySupport} ] واعطائك رتبة ${mention}  تم بنجاح قبولك برجاء فتح تيكيت وانتظار الادمن**`);
+      acRoom.send(`** ${mention}  تم بنجاح قبولك برجاء فتح تيكيت وانتظار الادمن**`);
     });
   }
 }
