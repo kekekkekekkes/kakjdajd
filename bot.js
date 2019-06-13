@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const prefix = "g!"
+const prefix = "-"
 
 console.log(`hello`)
 
@@ -8,7 +8,7 @@ console.log(`hello`)
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = [`🌈RAINBOW | g!help-R |`,`By : KaNe `];
+    var setGame = [`🌈RAINBOW | -help |`,`By : KaNe `];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -26,7 +26,7 @@ client.on('ready', function(){
 
 
    client.on("message", message => {
- if (message.content === "g!help-R") {
+ if (message.content === "-help") {
      message.channel.send('**:heart_exclamation: تم ارسال رسالة في الخاص**  ');
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
