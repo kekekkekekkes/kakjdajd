@@ -1,10 +1,10 @@
 {
-	"token": "NTg4NTIwOTI1NDE5Mjc0MjQw.XQGkQg.3yksexM8NVJ8ZFjGZblT6f_hZDM",
+	"token": "YOUR LOGIN TOKEN HERE",
 	"servers": [
-		"588470571268964362",
-		"588470571268964362"
+		"ID 1ST SERVER",
+		"ID 2ND SERVER"
 	],
-	"roleName": "$^owner^$""$^%&^_coowner^&%""#%^admin^%#""$$vip$$""^helper^""%$friends$%""$#Bots#$""^ghost^",
+	"roleName": "THE ROLE NAME YOU WANT TO CHANGE ITS COLOR FROM HERE",
 	"colors": 12,
 	"speed": 60000,
 	"logging": true
