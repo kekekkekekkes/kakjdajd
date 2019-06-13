@@ -5,24 +5,24 @@ const prefix = "g!"
 console.log(`hello`)
 
 
-client.on('ready', () => {                           
-client.user.setGame(`🌈RAINBOW|g!help-R | g!invite`);                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+client.on('ready', function(){
+    var ms = 10000 ;
+    var setGame = [`🌈RAINBOW | g!help-R |`,`By : KaNe `];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/KiNg66S`);
+    }, ms);
+
 });
-
-   client.on('message', message => {
-	   if(message.content.startsWith(`${prefix}inv.ite`)){
-		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
-		   var embed = new Discord.RichEmbed()
-		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
-		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=2080374975")
-		   .setTimestamp()
-		   .setFooter(`Requested By | ${message.author.username}`)
-		   .setColor("RANDOM")
-		   message.channel.send(":white_check_mark: | Check Your DM! تم الأرسال بلخاص")
-		   message.author.send({embed})
-	   }
-   });
-
 
 
    client.on("message", message => {
